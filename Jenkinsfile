@@ -13,5 +13,11 @@ pipeline {
                 sh 'docker build -t my-python-image:ci .'
             }
         }
+
+        stage('Run Pytest in Docker') {
+            steps {
+                sh 'docker run --rm my-python-image:ci'
+            }
+        }
     }
 }
