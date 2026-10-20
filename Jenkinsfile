@@ -15,15 +15,14 @@ pipeline {
         }
 
         stage('Run Pytest in Docker') {
-   		 steps {
-        sh '''
-            docker run --rm \
-              -v "$WORKSPACE:/reports" \
-              my-python-image:ci \
-              python -m pytest -v --junitxml=/reports/results.xml
-        '''
-   		 }
-		}
+            steps {
+                sh '''
+                    docker run --rm \
+                      -v "$WORKSPACE:/reports" \
+                      my-python-image:ci \
+                      python -m pytest -v --junitxml=/reports/results.xml
+                '''
+            }
         }
     }
 }
