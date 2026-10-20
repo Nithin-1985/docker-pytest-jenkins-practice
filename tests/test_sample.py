@@ -1,6 +1,6 @@
 def test_addition():
     result = 2 + 3
-    assert result == 10
+    assert result == 5
 
 
 def test_subtraction():
